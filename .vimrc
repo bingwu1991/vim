@@ -77,15 +77,15 @@ autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
 " syntastic config
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" 
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" 
 
 " NERDTree config
 nmap <F2> :NERDTree  <CR>
@@ -99,7 +99,7 @@ let g:autoformat_autoindent = 0
 let g:autoformat_retab = 0
 let g:autoformat_remove_trailing_spaces = 0
 " Js beatify
-map <c-f> :Autoformat <CR>
+map <c-q> :Autoformat <CR>
 "map <c-f> :call JsBeautify()<cr>
 " or
 " autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
@@ -113,5 +113,5 @@ map <c-f> :Autoformat <CR>
 " autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
 
 
-" JSON format, change python lib json.tool when call dump add ensure_ascii = False param, to prevent encode chinese
+" deal chinese,should pass ensure_ascii=False in json.dump function
 :command JSON %!python -m json.tool
