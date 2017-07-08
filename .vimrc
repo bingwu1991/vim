@@ -33,7 +33,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 "Plugin 'ervandew/supertab'
 
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'Rip-Rip/clang_complete'
 
 Plugin 'scrooloose/nerdtree'
@@ -43,6 +43,7 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'L9'
 Plugin 'Raimondi/delimitMate'
 " Git plugin not hosted on GitHub
+Plugin 'git@github.com:davidhalter/jedi-vim.git'
 "Plugin 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (i.e. when working on your own plugin)
 "Plugin 'file:///home/gmarik/path/to/plugin'
@@ -76,6 +77,9 @@ autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 " ycm config
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
+" jedi-vim config
+let g:jedi#use_tabs_not_buffers = 1
+
 " syntastic config
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
@@ -85,7 +89,6 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/
 " let g:syntastic_auto_loc_list = 1
 " let g:syntastic_check_on_open = 1
 " let g:syntastic_check_on_wq = 0
-" 
 
 " NERDTree config
 nmap <F2> :NERDTree  <CR>
